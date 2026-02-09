@@ -729,11 +729,55 @@ const handleFileUpload = async (e) => {
   }
 };
 
-  const evaluateLessonPlan = async () => {
-    if (!lessonPlan.trim()) {
-      setError('Please enter or upload a lesson plan first.');
+  cconst evaluateLessonPlan = async () => {
+  if (!lessonPlan.trim()) {
+    setError('Please enter or upload a lesson plan first.');
+    return;
+  }
+
+  if (demoMode) {
+    const sampleKey = Object.keys(SAMPLE_LESSONS).find(
+      key => SAMPLE_LESSONS[key].content === lessonPlan
+    );
+    if (sampleKey) {
+      setLoading(true);
+      setTimeout(() => {
+        setEvaluation(DEMO_EVALUATIONS[sampleKey]);
+        setLoading(false);
+      }, 1500);
       return;
     }
+  }
+
+  setLoading(true);
+  setError(null);
+  setEvaluation(null);
+
+  try {
+    const response = await fetch('/api/evaluate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        lessonPlan: lessonPlan,
+        gradeLevel: gradeLevel
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    const evaluationData = await response.json();
+    setEvaluation(evaluationData);
+  } catch (err) {
+    console.error('Evaluation error:', err);
+    setError(err.message || 'Error evaluating lesson plan.');
+  } finally {
+    setLoading(false);
+  }
+};
 
     if (demoMode) {
       const sampleKey = Object.keys(SAMPLE_LESSONS).find(
@@ -760,20 +804,14 @@ const handleFileUpload = async (e) => {
         throw new Error('API key not configured. Please add VITE_ANTHROPIC_API_KEY to your .env.local file.');
       }
 
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01'
-        },
+const response = await fetch('/api/evaluate', {        method: 'POST',
+ headers: {
+  'Content-Type': 'application/json',
+},
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 4000,
-          messages: [{
-            role: 'user',
-            content: `You are an expert mathematics education evaluator. Analyze this K-12 math lesson plan using TWO frameworks.
-
+  lessonPlan: lessonPlan,
+  gradeLevel: gradeLevel
+})
 FRAMEWORK 1: TASK ANALYSIS GUIDE
 Analyze EACH distinct task/activity separately:
 Level 1 - Memorization
