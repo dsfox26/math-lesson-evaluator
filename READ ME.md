@@ -17,3 +17,6 @@ AI-powered evaluation of K-12 mathematics lesson plans using research-based fram
 ## Get API Key
 
 Get a free Claude API key at https://console.anthropic.com
+
+## Live App
+Deployed on Vercel
