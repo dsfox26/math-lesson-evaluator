@@ -60,6 +60,11 @@ export default async function handler(req, res) {
   }
 
   try {
+    const apiKey = process.env.VITE_ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'API key not configured. Set VITE_ANTHROPIC_API_KEY in Vercel environment variables.' });
+    }
+
     const { lessonPlan, gradeLevel, evaluationType = 'lesson' } = req.body;
 
     let prompt;
@@ -129,7 +134,7 @@ Respond ONLY with valid JSON (no markdown):
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': process.env.VITE_ANTHROPIC_API_KEY,
+        'x-api-key': apiKey,
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
@@ -143,6 +148,12 @@ Respond ONLY with valid JSON (no markdown):
     });
 
     const data = await response.json();
+
+    if (!response.ok) {
+      console.error('Anthropic API error:', data);
+      return res.status(502).json({ error: data.error?.message || 'Anthropic API error' });
+    }
+
     const responseText = data.content
       .map(item => item.type === 'text' ? item.text : '')
       .join('\n')
