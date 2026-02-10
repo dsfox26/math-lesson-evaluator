@@ -27,6 +27,14 @@ const EXEMPLARS = [
     title: "Match property names to equations",
     description: "Students match property names (commutative, associative, distributive, identity) to equations that illustrate them. Pure recall of definitions with no application."
   },
+  {level: 1,
+    title: "Fractions, decimals, and percents",
+    description: "What are the decimal and percent equivalents for the fractions 1/2 and 1/4? Involves producing previously learned facts. No procedure is required and no connection is made with underlying concepts. " 
+  },
+  {level: 1,
+    title: "Identifying slope and y-intercepts",
+    description: "In the following equations, name the slope and the y-intercept. A: y=8x+15, B: y=-2x+7, C: y=4x-9. This involves producing previously learned rules and facts. There is no ambiguity, and there is no connection to the concepts that underlie the facts."
+  },
 
   // ---- LEVEL 2: PROCEDURES WITHOUT CONNECTIONS ----
   {
@@ -38,6 +46,14 @@ const EXEMPLARS = [
     level: 2,
     title: "Write and solve proportions for percentages",
     description: "Students write and solve proportions for percentage problems (e.g., 'What is 30% of 450?'). Applying cross-multiplication procedure without understanding what percentage means."
+  },
+  {level: 2,
+    title: "Converting fractions to decimals and percents",
+    description: "Convert the fraction 3/8 to a decimal and a percent. Show your work. Use of procedure is called for and there is little ambiguity about what needs to be done. "
+  },
+  {level: 2,
+    title: "Finding different values for y in y=mx+b, as x changes",
+    description: "If y=8x+15, evaluate y when x = 10, 20, and 30. Explain the procedure you used to find your solution. This task focuses on the explicit use of algorithmic procedures, but does not connect the procedure or outcomes to deeper math concepts."
   },
 
   // ---- LEVEL 3: PROCEDURES WITH CONNECTIONS ----
@@ -51,7 +67,14 @@ const EXEMPLARS = [
     title: "Compare basketball players' field goal percentages",
     description: "Students compare two basketball players' field goal percentages shown as fractions, then determine if a new game's data changes who is better. Requires connecting fraction comparison to real context; extension requires reasoning about how additional data affects the comparison."
   },
-
+  {level: 3,
+    title: "Use a grid to find decimal and percent equivalents",
+    description: "Using a 10x10 grid, identify the decimal and percent equivalens of 3/5. This suggests a pathway to follow and is represented using a visual diagram. "
+  },
+  {level: 3,
+    title: "Find proportion of defective lightbulbs",
+    description: "Alazar Electric company sells light bulbs to big box stores- the big chain stores that frequently buy large numbers of bulbs in one sale. They sample their bulbs for defects. A sample of 96 light bulbs consisted of 4 defective ones. Assume today's batch of 6,000 light bulbs has the same porportion of defective bulbs as the sample. Set up a proportion and solve it to determine the total number of defective bulbs. The big businesses they sell to accept no larger than 4% rate of defective bulbs. Is today's batch less than 4% defective? Show your work. This is procedures with connections because even though it explicitly states to set up a proportion, there are more ways than one to do that. It also focuses attention on the use of procedures for developing deeper understanding of math concepts and relationships."
+  },
   // ---- LEVEL 4: DOING MATHEMATICS ----
   {
     level: 4,
@@ -62,6 +85,14 @@ const EXEMPLARS = [
     level: 4,
     title: "Treena's basketball camp budget",
     description: "Treena wants to attend basketball camp costing a given amount. She has saved some money and earns a weekly allowance. Students must determine when she can afford it. Open-ended, requires formulating approach, multiple valid strategies, mathematical argumentation."
+  },
+  {level: 4,
+    title: "Using a diagram to explain equivalent decimal, percent, and fraction",
+    description: "Shae 6 og the square in a 6x10 rectangle. Using the diagram, explain how to determine each of the following: the percent of the area that is shaded, the decimal part of the area that is shaded, and the fractional part of the area that is shaded. This problem is also embedded in a real world scenario and requires students to explore and explain the nature of mathematical relationships non-algorithmically."
+  },
+  {level: 4,
+    title: "Creating equations to find t-shirt cost",
+    description: "This past summer, you were hired to work at Custom T-Shirts. When a customer places an order for a special design, Custom T-Shirts charges a one-time fee of $15 to set up a t-shirt design, plus $8 for each t-shirt printed. What equation can be used to determine how much to charge a customer for any number of shirts? Explain how you determined your answer. This is a real world problem that is open ended, requires students to access relevant knowledge, and requires explanation."
   },
 
   // ============================================================
