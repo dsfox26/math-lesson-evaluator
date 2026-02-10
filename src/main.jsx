@@ -689,6 +689,164 @@ const DEMO_EVALUATIONS = {
   }
 };
 
+// Sample math tasks for task evaluation mode
+const SAMPLE_TASKS = {
+  highCognitiveDemand: {
+    title: "Pattern Block Fractions (High Cognitive Demand)",
+    grade: "3",
+    content: `Pattern Block Fractions
+
+If the yellow hexagon equals one whole, use pattern blocks to figure out what fraction each of these shapes represents:
+- The red trapezoid
+- The blue rhombus
+- The green triangle
+
+Then answer:
+a) How many green triangles does it take to cover one yellow hexagon? Write the fraction each triangle represents.
+b) How many blue rhombuses does it take to cover one yellow hexagon? Write the fraction each rhombus represents.
+c) Show two different ways to cover the yellow hexagon using a mix of different pieces. Write an equation for each way that shows the fractions add up to 1.
+d) If two hexagons equal one whole, what fraction does one red trapezoid represent now? What about one green triangle?
+e) Explain why the fraction for the green triangle changed when you changed what "one whole" means.`
+  },
+
+  moderateCognitiveDemand: {
+    title: "School Garden Planning (Moderate Cognitive Demand)",
+    grade: "5",
+    content: `School Garden Planning
+
+The 5th grade class is planting a rectangular school garden. The garden is 12 feet long and 8 feet wide.
+
+They need to:
+1. Calculate the area of the garden in square feet.
+2. They want to divide the garden into 4 equal sections for different vegetables. Draw a diagram showing two different ways to divide the garden into 4 equal sections. Label the dimensions of each section.
+3. Each section needs a border of small stones. If stones cost $2.50 per foot, calculate the total cost of stones needed to border ALL four sections (including the outside border and the dividing borders).
+4. If each vegetable plant needs 2 square feet of space, how many plants can fit in each section?`
+  },
+
+  lowCognitiveDemand: {
+    title: "Fraction Addition Drill (Low Cognitive Demand)",
+    grade: "5",
+    content: `Fraction Addition Practice
+
+Directions: Add the following fractions. Simplify your answer if possible.
+
+1) 1/4 + 2/4 =
+2) 3/8 + 2/8 =
+3) 1/3 + 1/3 =
+4) 2/5 + 1/5 =
+5) 3/10 + 4/10 =
+6) 1/6 + 3/6 =
+7) 5/12 + 3/12 =
+8) 2/7 + 3/7 =
+9) 1/8 + 5/8 =
+10) 4/9 + 2/9 =
+
+Remember: When the denominators are the same, just add the numerators and keep the denominator the same!`
+  }
+};
+
+// Pre-generated evaluations for task demo mode
+const DEMO_TASK_EVALUATIONS = {
+  highCognitiveDemand: {
+    cognitiveLevel: 4,
+    taskFeatures: {
+      complexity: "High - Multi-step task requiring exploration of fractional relationships through physical models, with a conceptual shift when the whole changes",
+      representations: "High - Concrete (pattern blocks), visual (diagrams), symbolic (fraction equations), and verbal (written explanation) representations all required",
+      reasoning: "High - Students must reason about why fractional values change when the referent whole changes, requiring deep conceptual understanding",
+      openEndedness: "High - Part (c) has multiple correct solutions; part (e) requires constructing an original explanation",
+      connections: "High - Connects physical models to symbolic fractions, explores the fundamental concept that fractions are relative to the defined whole"
+    },
+    overallAssessment: "Level 4 (Doing Mathematics) — This task requires genuine mathematical exploration and reasoning. Students must construct understanding of fraction relationships through hands-on investigation, represent their thinking in multiple ways, and grapple with the conceptually challenging idea that a fraction's value depends on the referent whole. The task cannot be solved by applying a memorized procedure.",
+    strengths: [
+      "Requires multiple representations: concrete, visual, symbolic, and verbal",
+      "Part (c) has multiple correct answers, encouraging mathematical creativity",
+      "Part (d)-(e) introduce a conceptual shift that deepens understanding of fractions as relative quantities",
+      "Builds from accessible entry point (identifying basic fractions) to complex reasoning",
+      "Grounded in concrete materials that make abstract concepts tangible"
+    ],
+    concerns: [
+      "Students unfamiliar with pattern blocks may need initial orientation to the materials",
+      "The jump from part (c) to part (d) is significant — some students may need scaffolding"
+    ],
+    redFlags: [],
+    cognitiveRisk: "Low risk of cognitive decline. The task's structure — building from concrete exploration to abstract reasoning — naturally maintains high demand. However, if a teacher demonstrates part (c) before students explore, the open-ended nature would be eliminated. Teachers should resist showing solutions and instead ask probing questions.",
+    recommendations: [
+      "Ensure students have adequate time to explore with physical blocks before moving to symbolic notation",
+      "Consider adding a partner discussion step between parts (c) and (d) to prepare for the conceptual shift",
+      "Have students share and compare their different solutions for part (c) to highlight that multiple representations are valid"
+    ],
+    revisedApproach: "The task is already strong. A minor enhancement: after part (e), add a reflection prompt asking students to create their own example of how changing the whole changes the fractional value, using a real-world context (e.g., 'half of a pizza vs. half of a cookie')."
+  },
+
+  moderateCognitiveDemand: {
+    cognitiveLevel: 3,
+    taskFeatures: {
+      complexity: "Moderate - Multi-step problem with real-world context, but each step uses a known procedure (area, perimeter, division, cost calculation)",
+      representations: "Moderate - Requires diagram drawing and numerical calculations, but the connection between them is straightforward",
+      reasoning: "Moderate - Step 3 requires careful geometric reasoning about which borders exist, but other steps are more procedural",
+      openEndedness: "Moderate - Step 2 asks for two different ways to divide the garden, allowing some creativity, but the solution space is constrained",
+      connections: "Moderate - Connects area and perimeter concepts to a real-world context, links geometry to money calculations"
+    },
+    overallAssessment: "Level 3 (Procedures With Connections) — This task uses procedures (area, perimeter, division) but connects them meaningfully through a real-world garden context. Students must think about how the procedures relate to each other and to the physical situation. Step 3 is particularly strong because students must reason carefully about which borders to count. However, the task doesn't require students to discover new mathematical relationships or construct novel approaches.",
+    strengths: [
+      "Engaging real-world context that motivates the mathematics",
+      "Multi-step structure requires students to connect different mathematical concepts",
+      "Step 2 allows for multiple valid approaches and requires spatial reasoning",
+      "Step 3 requires careful geometric thinking about border lengths (not just plug-and-chug)",
+      "Accessible entry point with increasing complexity"
+    ],
+    concerns: [
+      "Steps 1 and 4 are fairly procedural on their own — they gain meaning only in the full context",
+      "Students might calculate perimeter of only the outer border in Step 3, missing the internal dividing borders",
+      "The task could be elevated by asking students to optimize the garden layout or compare designs"
+    ],
+    redFlags: [],
+    cognitiveRisk: "Moderate risk of cognitive decline. If a teacher pre-draws the diagram for Step 2, the spatial reasoning component is lost. If the teacher specifies which borders to count in Step 3, the geometric reasoning is eliminated. The real-world context helps maintain engagement, but the procedural steps (1 and 4) could become rote if taught as isolated calculations.",
+    recommendations: [
+      "Add a comparison question: 'Which of your two garden designs uses fewer stones for borders? Why?'",
+      "Consider asking students to design their OWN garden dimensions given a fixed budget for stones",
+      "Have students present their different garden divisions and discuss advantages of each design"
+    ],
+    revisedApproach: "Keep the existing structure but add a design challenge: 'The class has a budget of $200 for stones. What is the largest garden they can border completely (including 4 equal sections)? Show your reasoning.' This elevates the task toward Level 4 by requiring optimization and mathematical argumentation."
+  },
+
+  lowCognitiveDemand: {
+    cognitiveLevel: 2,
+    taskFeatures: {
+      complexity: "Low - Single-step problems all following the identical procedure, no variation in problem type",
+      representations: "Low - Purely symbolic; no visual models, number lines, or contextual representations",
+      reasoning: "Low - No reasoning required; the rule is explicitly stated at the bottom of the page",
+      openEndedness: "None - Every problem has exactly one correct answer with one expected solution path",
+      connections: "None - No connection to meaning of fractions, real-world contexts, or other mathematical ideas"
+    },
+    overallAssessment: "Level 2 (Procedures Without Connections) — This is a routine practice worksheet that asks students to repeatedly apply a stated rule ('add the numerators, keep the denominator'). While procedural fluency has value, this task provides no opportunity for mathematical thinking, reasoning, or understanding of WHY the procedure works. All problems are structurally identical (like denominators), and the answer rule is given directly.",
+    strengths: [
+      "Clear, unambiguous directions",
+      "Appropriate progression within the set (denominators increase gradually)"
+    ],
+    concerns: [
+      "The rule is given explicitly, removing any need for mathematical thinking",
+      "All problems are the same type — no variation, no unlike denominators, no mixed numbers",
+      "No visual models to build understanding of what fraction addition means",
+      "No real-world context to motivate why fraction addition matters",
+      "Students can complete the entire worksheet without understanding fractions at all"
+    ],
+    redFlags: [
+      "Rule stated at bottom eliminates any possibility of student reasoning or discovery",
+      "Purely procedural — students could follow the rule correctly while having zero conceptual understanding",
+      "No connection between symbolic notation and the meaning of combining fractional quantities"
+    ],
+    cognitiveRisk: "Already at low cognitive demand — no decline possible, but also no opportunity for growth. The explicit rule statement ensures students will not engage in any mathematical thinking. Even students who might naturally reason about fraction addition are directed to a mechanical procedure.",
+    recommendations: [
+      "Remove the stated rule and instead ask students to figure out HOW to add fractions with the same denominator using visual models (fraction strips, area models)",
+      "Include at least some problems with unlike denominators to require actual mathematical reasoning",
+      "Add a word problem that requires fraction addition in context",
+      "Ask students to EXPLAIN why the procedure works using a model or diagram"
+    ],
+    revisedApproach: "Replace with: Give students fraction strips. Present a word problem: 'Maria ate 1/4 of a pizza and then 2/4 more. How much did she eat in total? Use your fraction strips to show your answer.' Then have students explore: 'Does this always work? Try other fractions with the same denominator. What pattern do you notice? WHY does this pattern work?' Only after exploration and discussion should the class formalize the procedure."
+  }
+};
+
 // Main App Component
 function MathLessonEvaluator() {
   const [lessonPlan, setLessonPlan] = useState('');
@@ -698,6 +856,7 @@ function MathLessonEvaluator() {
   const [gradeLevel, setGradeLevel] = useState('');
   const [showAbout, setShowAbout] = useState(false);
   const [demoMode, setDemoMode] = useState(false);
+  const [evaluationType, setEvaluationType] = useState('lesson');
 
   const loadSampleLesson = (sampleKey) => {
     const sample = SAMPLE_LESSONS[sampleKey];
@@ -708,41 +867,76 @@ function MathLessonEvaluator() {
     setEvaluation(null);
   };
 
+  const loadSampleTask = (sampleKey) => {
+    const sample = SAMPLE_TASKS[sampleKey];
+    setLessonPlan(sample.content);
+    setGradeLevel(sample.grade);
+    setDemoMode(true);
+    setError(null);
+    setEvaluation(null);
+  };
+
+  const handleEvaluationTypeChange = (newType) => {
+    setEvaluationType(newType);
+    setLessonPlan('');
+    setEvaluation(null);
+    setError(null);
+    setDemoMode(false);
+  };
+
 const handleFileUpload = async (e) => {
   const file = e.target.files[0];
   if (!file) return;
 
   try {
-    // Check file type
-    if (file.type === 'application/pdf') {
-      setError('PDF support coming soon! For now, please copy and paste the text from your PDF into the text area below.');
+    const name = file.name.toLowerCase();
+    let text;
+
+    if (name.endsWith('.pdf')) {
+      const { extractTextFromPdf } = await import('./fileParserUtils');
+      text = await extractTextFromPdf(file);
+    } else if (name.endsWith('.docx')) {
+      const { extractTextFromDocx } = await import('./fileParserUtils');
+      text = await extractTextFromDocx(file);
+    } else if (name.endsWith('.doc')) {
+      setError('The legacy .doc format is not supported. Please re-save the file as .docx and try again.');
+      e.target.value = '';
+      return;
+    } else {
+      text = await file.text();
+    }
+
+    if (!text || !text.trim()) {
+      setError('No text could be extracted from this file. If this is a scanned PDF, it may contain only images with no text layer.');
+      e.target.value = '';
       return;
     }
-    
-    // Read text files
-    const text = await file.text();
+
     setLessonPlan(text);
     setError(null);
     setDemoMode(false);
   } catch (err) {
     setError('Error reading file. Please try copying and pasting the text directly into the text area.');
   }
+  e.target.value = '';
 };
 
-  cconst evaluateLessonPlan = async () => {
+  const evaluateLessonPlan = async () => {
   if (!lessonPlan.trim()) {
-    setError('Please enter or upload a lesson plan first.');
+    setError('Please enter or upload a lesson plan or math task first.');
     return;
   }
 
   if (demoMode) {
-    const sampleKey = Object.keys(SAMPLE_LESSONS).find(
-      key => SAMPLE_LESSONS[key].content === lessonPlan
+    const samples = evaluationType === 'task' ? SAMPLE_TASKS : SAMPLE_LESSONS;
+    const demoEvals = evaluationType === 'task' ? DEMO_TASK_EVALUATIONS : DEMO_EVALUATIONS;
+    const sampleKey = Object.keys(samples).find(
+      key => samples[key].content === lessonPlan
     );
-    if (sampleKey) {
+    if (sampleKey && demoEvals[sampleKey]) {
       setLoading(true);
       setTimeout(() => {
-        setEvaluation(DEMO_EVALUATIONS[sampleKey]);
+        setEvaluation(demoEvals[sampleKey]);
         setLoading(false);
       }, 1500);
       return;
@@ -761,7 +955,8 @@ const handleFileUpload = async (e) => {
       },
       body: JSON.stringify({
         lessonPlan: lessonPlan,
-        gradeLevel: gradeLevel
+        gradeLevel: gradeLevel,
+        evaluationType: evaluationType
       })
     });
 
@@ -773,138 +968,89 @@ const handleFileUpload = async (e) => {
     setEvaluation(evaluationData);
   } catch (err) {
     console.error('Evaluation error:', err);
-    setError(err.message || 'Error evaluating lesson plan.');
+    setError(err.message || 'Error evaluating.');
   } finally {
     setLoading(false);
   }
 };
 
-    if (demoMode) {
-      const sampleKey = Object.keys(SAMPLE_LESSONS).find(
-        key => SAMPLE_LESSONS[key].content === lessonPlan
-      );
-      if (sampleKey) {
-        setLoading(true);
-        setTimeout(() => {
-          setEvaluation(DEMO_EVALUATIONS[sampleKey]);
-          setLoading(false);
-        }, 1500);
-        return;
-      }
-    }
-
-    setLoading(true);
-    setError(null);
-    setEvaluation(null);
-
-    try {
-      const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY;
-      
-      if (!apiKey) {
-        throw new Error('API key not configured. Please add VITE_ANTHROPIC_API_KEY to your .env.local file.');
-      }
-
-const response = await fetch('/api/evaluate', {        method: 'POST',
- headers: {
-  'Content-Type': 'application/json',
-},
-        body: JSON.stringify({
-  lessonPlan: lessonPlan,
-  gradeLevel: gradeLevel
-})
-FRAMEWORK 1: TASK ANALYSIS GUIDE
-Analyze EACH distinct task/activity separately:
-Level 1 - Memorization
-Level 2 - Procedures Without Connections  
-Level 3 - Procedures With Connections
-Level 4 - Doing Mathematics
-
-FRAMEWORK 2: MQI (Mathematical Quality of Instruction)
-Rate overall lesson 1-5 across dimensions: Richness, Working with Students, Errors, Student Practices
-
-GRADE: ${gradeLevel || 'Not specified'}
-
-LESSON:
-${lessonPlan}
-
-Respond ONLY with valid JSON (no markdown):
-{
-  "tasks": [{"taskName": "...", "taskDescription": "...", "cognitiveLevel": 1-4, "analysis": "..."}],
-  "overallMQI": 1-5,
-  "overallAssessment": "...",
-  "mqiDimensions": {...},
-  "strengths": [...],
-  "concerns": [...],
-  "redFlags": [...],
-  "instructionalSequence": "...",
-  "recommendations": [...],
-  "revisedApproach": "..."
-}`
-          }]
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const responseText = data.content
-        .map(item => item.type === 'text' ? item.text : '')
-        .join('\n')
-        .trim();
-
-      const cleanedResponse = responseText.replace(/```json\n?|\n?```/g, '').trim();
-      const evaluationData = JSON.parse(cleanedResponse);
-      
-      setEvaluation(evaluationData);
-    } catch (err) {
-      console.error('Evaluation error:', err);
-      setError(err.message || 'Error evaluating lesson plan. Please check your API key configuration.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const downloadAsText = () => {
     if (!evaluation) return;
-    
-    const text = `MATH LESSON PLAN EVALUATION
+
+    let text;
+    let filename;
+
+    if (evaluationType === 'task') {
+      const levelLabels = { 1: 'Memorization', 2: 'Procedures Without Connections', 3: 'Procedures With Connections', 4: 'Doing Mathematics' };
+      text = `MATH TASK EVALUATION
 ${'='.repeat(50)}
 
-MQI SCORE: ${evaluation.overallMQI}/5
+COGNITIVE DEMAND LEVEL: ${evaluation.cognitiveLevel}/4 - ${levelLabels[evaluation.cognitiveLevel] || ''}
 
-TASK ANALYSIS:
-${evaluation.tasks.map((t, i) => `${i+1}. ${t.taskName} - Level ${t.cognitiveLevel}\n   ${t.analysis}`).join('\n')}
+TASK FEATURES:
+${Object.entries(evaluation.taskFeatures || {}).map(([k, v]) => `  ${k}: ${v}`).join('\n')}
 
 OVERALL ASSESSMENT:
 ${evaluation.overallAssessment}
 
 STRENGTHS:
-${evaluation.strengths.map((s, i) => `${i+1}. ${s}`).join('\n')}
+${(evaluation.strengths || []).map((s, i) => `${i+1}. ${s}`).join('\n')}
 
 CONCERNS:
-${evaluation.concerns.map((c, i) => `${i+1}. ${c}`).join('\n')}
+${(evaluation.concerns || []).map((c, i) => `${i+1}. ${c}`).join('\n')}
 
+COGNITIVE RISK:
+${evaluation.cognitiveRisk || ''}
+
+${(evaluation.redFlags || []).length > 0 ? `RED FLAGS:\n${evaluation.redFlags.map((f, i) => `${i+1}. ${f}`).join('\n')}\n` : ''}
 RECOMMENDATIONS:
-${evaluation.recommendations.map((r, i) => `${i+1}. ${r}`).join('\n')}
+${(evaluation.recommendations || []).map((r, i) => `${i+1}. ${r}`).join('\n')}
 
 REVISED APPROACH:
 ${evaluation.revisedApproach}
 `;
+      filename = `task-evaluation-${Date.now()}.txt`;
+    } else {
+      text = `MATH LESSON PLAN EVALUATION
+${'='.repeat(50)}
+
+MQI SCORE: ${evaluation.overallMQI}/5
+
+TASK ANALYSIS:
+${(evaluation.tasks || []).map((t, i) => `${i+1}. ${t.taskName} - Level ${t.cognitiveLevel}\n   ${t.analysis}`).join('\n')}
+
+OVERALL ASSESSMENT:
+${evaluation.overallAssessment}
+
+STRENGTHS:
+${(evaluation.strengths || []).map((s, i) => `${i+1}. ${s}`).join('\n')}
+
+CONCERNS:
+${(evaluation.concerns || []).map((c, i) => `${i+1}. ${c}`).join('\n')}
+
+RECOMMENDATIONS:
+${(evaluation.recommendations || []).map((r, i) => `${i+1}. ${r}`).join('\n')}
+
+REVISED APPROACH:
+${evaluation.revisedApproach}
+`;
+      filename = `lesson-evaluation-${Date.now()}.txt`;
+    }
 
     const blob = new Blob([text], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `lesson-evaluation-${Date.now()}.txt`;
+    a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
   };
 
   const copyToClipboard = () => {
     if (!evaluation) return;
-    const text = `MQI: ${evaluation.overallMQI}/5\n${evaluation.overallAssessment}`;
+    const text = evaluationType === 'task'
+      ? `Cognitive Level: ${evaluation.cognitiveLevel}/4\n${evaluation.overallAssessment}`
+      : `MQI: ${evaluation.overallMQI}/5\n${evaluation.overallAssessment}`;
     navigator.clipboard.writeText(text);
     alert('Copied to clipboard!');
   };
@@ -917,7 +1063,7 @@ ${evaluation.revisedApproach}
             <div className="flex items-center gap-3">
               <BookOpen className="w-8 h-8 text-indigo-600" />
               <h1 className="text-3xl font-bold text-gray-800">
-                Math Lesson Plan Evaluator
+                {evaluationType === 'task' ? 'Math Task Evaluator' : 'Math Lesson Plan Evaluator'}
               </h1>
             </div>
             <button
@@ -929,67 +1075,109 @@ ${evaluation.revisedApproach}
             </button>
           </div>
           <p className="text-gray-600 mb-4">
-            Automated evaluation of K-12 math lessons using Task Analysis Guide and MQI frameworks.
+            {evaluationType === 'task'
+              ? 'Evaluate the cognitive demand of a math task using the Task Analysis Guide framework.'
+              : 'Automated evaluation of K-12 math lessons using Task Analysis Guide and MQI frameworks.'}
           </p>
 
           {showAbout && (
             <div className="mt-4 p-4 bg-blue-50 rounded-md border border-blue-200">
               <h3 className="font-semibold text-gray-800 mb-2">About This Tool</h3>
-              <p className="text-sm text-gray-700 mb-3">
-                Evaluates mathematics lesson plans to ensure high cognitive demand and authentic mathematical thinking.
-              </p>
-              <p className="text-sm text-gray-700">
-                Built on research-based frameworks for effective mathematics instruction.
-              </p>
+              {evaluationType === 'task' ? (
+                <>
+                  <p className="text-sm text-gray-700 mb-3">
+                    Analyzes a single math task or problem using the Task Analysis Guide (TAG) framework to classify its cognitive demand level (1-4).
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    Provides detailed analysis of task features, strengths, concerns, and recommendations for improvement.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="text-sm text-gray-700 mb-3">
+                    Evaluates mathematics lesson plans to ensure high cognitive demand and authentic mathematical thinking.
+                  </p>
+                  <p className="text-sm text-gray-700">
+                    Built on research-based frameworks for effective mathematics instruction.
+                  </p>
+                </>
+              )}
             </div>
           )}
 
           <div className="mt-4 p-4 bg-amber-50 rounded-md border border-amber-200">
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="w-5 h-5 text-amber-600" />
-              <h3 className="font-semibold text-gray-800">Try a Demo Lesson</h3>
+              <h3 className="font-semibold text-gray-800">
+                {evaluationType === 'task' ? 'Try a Demo Task' : 'Try a Demo Lesson'}
+              </h3>
             </div>
             <p className="text-sm text-gray-600 mb-3">
-              Click a sample lesson to see the evaluator in action:
+              {evaluationType === 'task'
+                ? 'Click a sample task to see the evaluator in action:'
+                : 'Click a sample lesson to see the evaluator in action:'}
             </p>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                onClick={() => loadSampleLesson('exemplary')}
-                className="px-3 py-2 bg-green-100 text-green-800 rounded-md hover:bg-green-200 transition-colors text-sm font-medium"
-              >
-                ⭐ Exemplary
-              </button>
-              <button
-                onClick={() => loadSampleLesson('strongWithMinorIssues')}
-                className="px-3 py-2 bg-blue-100 text-blue-800 rounded-md hover:bg-blue-200 transition-colors text-sm font-medium"
-              >
-                ✓ Strong
-              </button>
-              <button
-                onClick={() => loadSampleLesson('lowCognitiveDemand')}
-                className="px-3 py-2 bg-red-100 text-red-800 rounded-md hover:bg-red-200 transition-colors text-sm font-medium"
-              >
-                ✗ Low Quality
-              </button>
-              <button
-                onClick={() => loadSampleLesson('proceduralWithErrors')}
-                className="px-3 py-2 bg-orange-100 text-orange-800 rounded-md hover:bg-orange-200 transition-colors text-sm font-medium"
-              >
-                ⚠ With Errors
-              </button>
-              <button
-                onClick={() => loadSampleLesson('richButUnclear')}
-                className="px-3 py-2 bg-yellow-100 text-yellow-800 rounded-md hover:bg-yellow-200 transition-colors text-sm font-medium"
-              >
-                ? Unfocused
-              </button>
-              <button
-                onClick={() => loadSampleLesson('mixedApproach')}
-                className="px-3 py-2 bg-purple-100 text-purple-800 rounded-md hover:bg-purple-200 transition-colors text-sm font-medium"
-              >
-                ± Mixed
-              </button>
-            </div>
+            {evaluationType === 'task' ? (
+              <div className="grid grid-cols-1 gap-2">
+                <button
+                  onClick={() => loadSampleTask('highCognitiveDemand')}
+                  className="px-3 py-2 bg-green-100 text-green-800 rounded-md hover:bg-green-200 transition-colors text-sm font-medium text-left"
+                >
+                  Level 4 — Pattern Block Fractions (Grade 3)
+                </button>
+                <button
+                  onClick={() => loadSampleTask('moderateCognitiveDemand')}
+                  className="px-3 py-2 bg-blue-100 text-blue-800 rounded-md hover:bg-blue-200 transition-colors text-sm font-medium text-left"
+                >
+                  Level 3 — School Garden Planning (Grade 5)
+                </button>
+                <button
+                  onClick={() => loadSampleTask('lowCognitiveDemand')}
+                  className="px-3 py-2 bg-red-100 text-red-800 rounded-md hover:bg-red-200 transition-colors text-sm font-medium text-left"
+                >
+                  Level 2 — Fraction Addition Drill (Grade 5)
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => loadSampleLesson('exemplary')}
+                  className="px-3 py-2 bg-green-100 text-green-800 rounded-md hover:bg-green-200 transition-colors text-sm font-medium"
+                >
+                  ⭐ Exemplary
+                </button>
+                <button
+                  onClick={() => loadSampleLesson('strongWithMinorIssues')}
+                  className="px-3 py-2 bg-blue-100 text-blue-800 rounded-md hover:bg-blue-200 transition-colors text-sm font-medium"
+                >
+                  ✓ Strong
+                </button>
+                <button
+                  onClick={() => loadSampleLesson('lowCognitiveDemand')}
+                  className="px-3 py-2 bg-red-100 text-red-800 rounded-md hover:bg-red-200 transition-colors text-sm font-medium"
+                >
+                  ✗ Low Quality
+                </button>
+                <button
+                  onClick={() => loadSampleLesson('proceduralWithErrors')}
+                  className="px-3 py-2 bg-orange-100 text-orange-800 rounded-md hover:bg-orange-200 transition-colors text-sm font-medium"
+                >
+                  ⚠ With Errors
+                </button>
+                <button
+                  onClick={() => loadSampleLesson('richButUnclear')}
+                  className="px-3 py-2 bg-yellow-100 text-yellow-800 rounded-md hover:bg-yellow-200 transition-colors text-sm font-medium"
+                >
+                  ? Unfocused
+                </button>
+                <button
+                  onClick={() => loadSampleLesson('mixedApproach')}
+                  className="px-3 py-2 bg-purple-100 text-purple-800 rounded-md hover:bg-purple-200 transition-colors text-sm font-medium"
+                >
+                  ± Mixed
+                </button>
+              </div>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -997,8 +1185,22 @@ ${evaluation.revisedApproach}
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
               <FileText className="w-5 h-5" />
-              Lesson Plan Input
+              {evaluationType === 'task' ? 'Math Task Input' : 'Lesson Plan Input'}
             </h2>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                What are you evaluating?
+              </label>
+              <select
+                value={evaluationType}
+                onChange={(e) => handleEvaluationTypeChange(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                <option value="lesson">Lesson Plan (TAG + MQI)</option>
+                <option value="task">Math Task (TAG only)</option>
+              </select>
+            </div>
 
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1019,14 +1221,14 @@ ${evaluation.revisedApproach}
 
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Upload Lesson Plan
+                {evaluationType === 'task' ? 'Upload Math Task' : 'Upload Lesson Plan'}
               </label>
               <div className="flex items-center justify-center w-full">
                 <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <Upload className="w-8 h-8 text-gray-400 mb-2" />
                     <p className="text-sm text-gray-500">Click to upload</p>
-                    <p className="text-xs text-gray-400">TXT or DOC</p>
+                    <p className="text-xs text-gray-400">TXT, DOCX, or PDF</p>
                   </div>
                   <input
                     type="file"
@@ -1040,7 +1242,7 @@ ${evaluation.revisedApproach}
 
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Or Paste Lesson Plan Here
+                {evaluationType === 'task' ? 'Or Paste Math Task Here' : 'Or Paste Lesson Plan Here'}
               </label>
               <textarea
                 value={lessonPlan}
@@ -1048,7 +1250,9 @@ ${evaluation.revisedApproach}
                   setLessonPlan(e.target.value);
                   setDemoMode(false);
                 }}
-                placeholder="Paste your complete lesson plan here..."
+                placeholder={evaluationType === 'task'
+                  ? 'Paste your math task or problem here...'
+                  : 'Paste your complete lesson plan here...'}
                 className="w-full h-64 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm"
               />
             </div>
@@ -1066,7 +1270,7 @@ ${evaluation.revisedApproach}
               ) : (
                 <>
                   <TrendingUp className="w-5 h-5" />
-                  Evaluate Lesson
+                  {evaluationType === 'task' ? 'Evaluate Task' : 'Evaluate Lesson'}
                 </>
               )}
             </button>
@@ -1115,8 +1319,8 @@ ${evaluation.revisedApproach}
 
             {evaluation && (
               <div className="space-y-6 max-h-[600px] overflow-y-auto pr-2">
-                {/* Task Analysis */}
-                {evaluation.tasks && evaluation.tasks.length > 0 && (
+                {/* Lesson mode: Task Analysis cards */}
+                {evaluationType === 'lesson' && evaluation.tasks && evaluation.tasks.length > 0 && (
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-3">Task Analysis</h3>
                     <div className="space-y-3">
@@ -1146,8 +1350,51 @@ ${evaluation.revisedApproach}
                   </div>
                 )}
 
-                {/* MQI Score */}
-                {evaluation.overallMQI && (
+                {/* Task mode: Cognitive Demand Level card */}
+                {evaluationType === 'task' && evaluation.cognitiveLevel && (
+                  <div className="text-center">
+                    <div className={`p-4 rounded-lg ${
+                      evaluation.cognitiveLevel === 4 ? 'bg-green-50 border-2 border-green-300' :
+                      evaluation.cognitiveLevel === 3 ? 'bg-blue-50 border-2 border-blue-300' :
+                      evaluation.cognitiveLevel === 2 ? 'bg-yellow-50 border-2 border-yellow-300' :
+                      'bg-red-50 border-2 border-red-300'
+                    }`}>
+                      <span className={`inline-block px-4 py-2 rounded-full text-lg font-bold mb-2 ${
+                        evaluation.cognitiveLevel === 4 ? 'bg-green-200 text-green-900' :
+                        evaluation.cognitiveLevel === 3 ? 'bg-blue-200 text-blue-900' :
+                        evaluation.cognitiveLevel === 2 ? 'bg-yellow-200 text-yellow-900' :
+                        'bg-red-200 text-red-900'
+                      }`}>
+                        Level {evaluation.cognitiveLevel}/4
+                      </span>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {evaluation.cognitiveLevel === 4 ? 'Doing Mathematics' :
+                         evaluation.cognitiveLevel === 3 ? 'Procedures With Connections' :
+                         evaluation.cognitiveLevel === 2 ? 'Procedures Without Connections' :
+                         'Memorization'}
+                      </p>
+                      <p className="text-xs text-gray-500 mt-1">Cognitive Demand Level (Task Analysis Guide)</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Task mode: Task Features */}
+                {evaluationType === 'task' && evaluation.taskFeatures && (
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-3">Task Features</h3>
+                    <div className="space-y-2">
+                      {Object.entries(evaluation.taskFeatures).map(([key, value]) => (
+                        <div key={key} className="p-2 bg-gray-50 rounded-md">
+                          <span className="text-xs font-semibold text-gray-800 capitalize">{key}: </span>
+                          <span className="text-xs text-gray-700">{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Lesson mode: MQI Score */}
+                {evaluationType === 'lesson' && evaluation.overallMQI && (
                   <div className="text-center">
                     <div className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-lg font-bold ${
                       evaluation.overallMQI >= 4 ? 'bg-green-100 text-green-800' :
@@ -1190,6 +1437,14 @@ ${evaluation.revisedApproach}
                         </li>
                       ))}
                     </ul>
+                  </div>
+                )}
+
+                {/* Task mode: Cognitive Risk (after concerns) */}
+                {evaluationType === 'task' && evaluation.cognitiveRisk && (
+                  <div className="p-3 bg-amber-50 border border-amber-300 rounded-md">
+                    <h3 className="font-semibold text-amber-800 mb-1 text-sm">Cognitive Risk</h3>
+                    <p className="text-xs text-amber-900">{evaluation.cognitiveRisk}</p>
                   </div>
                 )}
 
@@ -1237,12 +1492,14 @@ ${evaluation.revisedApproach}
           <div className="text-sm text-gray-600 space-y-3">
             <div>
               <p className="font-semibold text-gray-800">Task Analysis Guide (Cognitive Demand)</p>
-              <p className="text-xs mt-1">Evaluates individual tasks on 4 levels from memorization to doing mathematics</p>
+              <p className="text-xs mt-1">Evaluates individual tasks on 4 levels from memorization to doing mathematics. Developed by the Institute for Learning, University of Pittsburgh.</p>
             </div>
-            <div>
-              <p className="font-semibold text-gray-800">Mathematical Quality of Instruction (MQI)</p>
-              <p className="text-xs mt-1">© 2014 Learning Mathematics for Teaching/Heather Hill</p>
-            </div>
+            {evaluationType === 'lesson' && (
+              <div>
+                <p className="font-semibold text-gray-800">Mathematical Quality of Instruction (MQI)</p>
+                <p className="text-xs mt-1">© 2014 Learning Mathematics for Teaching/Heather Hill</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
